@@ -1,22 +1,7 @@
-const express = require('express')
-const app = express()
- 
-app.get('/avanzada/v1/jugadores', function (req, res) {
-  res.send('Hello World')
-})
+require('dotenv').config()
 
-app.post('/avanzada/v1/jugadores', function (req, res) {
-    res.send('Hello World')
-})
+const ServidorModelo = require("./models/ServidorModelo")
 
-app.put('/avanzada/v1/jugadores', function (req, res) {
-    res.send('Hello World')
-})
+const servidorFutbol=new ServidorModelo()
 
-app.delete('/avanzada/v1/jugadores', function (req, res) {
-    res.send('Hello World')
-})
- 
-app.listen(3000,function(){
-    console.log("servidor encendido")
-})
+servidorFutbol.despertarServidor()
